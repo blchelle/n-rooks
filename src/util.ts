@@ -85,7 +85,7 @@ export function validateBoard(board: Chessboard) {
 			const cell = board[row][col];
 			if (cell === ROOK) {
 				if (filledRows.has(row) || filledCols.has(col)) {
-					console.error('\nInvalid Board Configuration\n');
+					console.log('\nInvalid Board Configuration\n');
 					return false;
 				}
 
@@ -106,13 +106,24 @@ export function validateBoard(board: Chessboard) {
  * @throws Program will exit if the board is invalid
  */
 export function validateInput(cells: string[]) {
-	const cellRegex = /[A-H][1-8]/;
+	const cellRegex = /[ABCDEFGH][12345678]/;
+
+	const cellSet = new Set<string>();
 
 	for (let cell of cells) {
 		if (!cellRegex.test(cell)) {
-			console.error(`\n'${cell}' is an invalid cell`);
-			console.error('All input values must be a valid chessboard cell');
-			console.error('Example Input: A1 B2 C3\n');
+			console.log(`\n'${cell}' is an invalid cell`);
+			console.log('All input values must be a valid chessboard cell');
+			console.log('Example Input: A1 B2 C3\n');
+			return false;
+		}
+
+		// Test for uniqueness. If the size of the set doesn't change when we
+		// add a cell, we know it already exists in the set.s
+		let numCells = cellSet.size;
+		cellSet.add(cell);
+		if (numCells === cellSet.size) {
+			console.log(`\nYou entered duplicate cells ${cell}\n`);
 			return false;
 		}
 	}
