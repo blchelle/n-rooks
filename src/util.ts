@@ -106,8 +106,9 @@ export function validateBoard(board: Chessboard) {
  * @throws Program will exit if the board is invalid
  */
 export function validateInput(cells: string[]) {
-	const cellRegex = /[ABCDEFGH][12345678]/;
+	const cellRegex = /^[ABCDEFGH][12345678]$/;
 
+	// This is going to be used for checking uniqueness at the end
 	const cellSet = new Set<string>();
 
 	for (let cell of cells) {
@@ -118,14 +119,14 @@ export function validateInput(cells: string[]) {
 			return false;
 		}
 
-		// Test for uniqueness. If the size of the set doesn't change when we
-		// add a cell, we know it already exists in the set.s
-		let numCells = cellSet.size;
 		cellSet.add(cell);
-		if (numCells === cellSet.size) {
-			console.log(`\nYou entered duplicate cells ${cell}\n`);
-			return false;
-		}
+	}
+
+	// Test for uniqueness. If the size of the set doesn't change when we
+	// add a cell, we know it already exists in the set.
+	if (cellSet.size < cells.length) {
+		console.log(`\nYou entered duplicate cells, which is invalid\n`);
+		return false;
 	}
 
 	return true;
