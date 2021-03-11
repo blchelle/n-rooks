@@ -1,0 +1,264 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>n-rooks</title>
+	<meta name="description" content="Documentation for n-rooks">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">n-rooks</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>n-rooks</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#n-rooks-problem" id="n-rooks-problem" style="color: inherit; text-decoration: none;">
+					<h1>N-Rooks Problem</h1>
+				</a>
+				<p>Let’s say we have a chessboard, which has the typical 8 x 8 square tiles.
+					The rook is a chess piece that can move horizontally and vertically across the entire board.
+				Write a program that will take a board with N number of rooks already placed, and for the program to place more rooks with the following rules.</p>
+				<ul>
+					<li>  Rooks must be placed in such a way that they don’t collide with each other.</li>
+					<li>  The program should take input for a starting board configuration with N rooks placed. (The starting set always conforms to the previous rule.)</li>
+					<li>  We would expect 8 total rooks (including the starting set) can always be placed without violating the rule.</li>
+				</ul>
+				<a href="#installation-instructions" id="installation-instructions" style="color: inherit; text-decoration: none;">
+					<h2>Installation Instructions</h2>
+				</a>
+				<p>All of the below technologies will be required to run this program.</p>
+				<ul>
+					<li>  Node</li>
+					<li>  Yarn/NPM</li>
+					<li>  Git</li>
+				</ul>
+				<p>If you are certain that you have all the required installations, you may skip to step 4.</p>
+				<ol>
+					<li>Execute the following command to ensure that NodeJS is installed on your machine. If it is, you will receive an output containing the version of Node on your machine.</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">node -v</span>
+<span style="color: #008000"># v14.16.0</span>
+</code></pre>
+				<ol start="2">
+					<li>Execute the following command to ensure that either NPM or Yarn is installed on your machine. If it is, you will receive an output containing the version of NPM/Yarn on your machine.</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">npm -v </span><span style="color: #008000"># 6.4.11</span>
+<span style="color: #008000"># or</span>
+<span style="color: #000000">yarn -v </span><span style="color: #008000"># 1.22.10</span>
+</code></pre>
+				<ol start="3">
+					<li>Execute the following to ensure that Git is installed on your machine. If it is, you will receive an output containing the version of Git on your machine.</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">git --version</span>
+<span style="color: #008000"># git version 2.25.1</span>
+</code></pre>
+				<ol start="4">
+					<li>Clone the repository to your local machine and navigate into the n-rooks directory</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">git clone https://github.com/blchelle/n-rooks &amp;&amp; </span><span style="color: #795E26">cd</span><span style="color: #000000"> n-rooks/</span>
+</code></pre>
+				<ol start="6">
+					<li>Install all of the project dependencies</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">npm install</span>
+<span style="color: #008000"># or</span>
+<span style="color: #000000">yarn install</span>
+</code></pre>
+				<a href="#execution-instructions" id="execution-instructions" style="color: inherit; text-decoration: none;">
+					<h2>Execution Instructions</h2>
+				</a>
+				<ol>
+					<li><p>Ensure that you have completed all the steps in <a href="#Installation-Instructions">Installation Instructions</a></p>
+					</li>
+					<li><p>Run the script by executing either of the following commands</p>
+					</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">npm run start</span>
+<span style="color: #008000"># or</span>
+<span style="color: #000000">yarn start</span>
+</code></pre>
+				<ol start="3">
+					<li>Once the script starts running, you will be shown the layout of the chessboard and then prompted to enter the locations of your rooks. Your input should be a space-separated list of cells. For example:</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">? Where are your rooks initially placed: A1 B2 C3 D4</span>
+</code></pre>
+				<ol start="3">
+					<li><p>After you enter your input, you will first be shown the board after it places your initial rooks. Then, once it finds locations for the remaining pieces, it will show you the solved configuration.</p>
+						<p> <strong>Note:</strong> This solution only shows you one of many possible configurations. For any input of n valid cells, there are !(8 - n) board configurations</p>
+					</li>
+				</ol>
+				<pre><code><span style="color: #000000">       </span><span style="color: #001080">Input</span><span style="color: #000000"> </span><span style="color: #001080">Board</span>
+<span style="color: #000000">=========================</span>
+<span style="color: #000000">     </span><span style="color: #098658">1</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #098658">4</span><span style="color: #000000"> </span><span style="color: #098658">5</span><span style="color: #000000"> </span><span style="color: #098658">6</span><span style="color: #000000"> </span><span style="color: #098658">7</span><span style="color: #000000"> </span><span style="color: #098658">8</span>
+<span style="color: #000000">    -----------------</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">A</span><span style="color: #000000"> | ♜ · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">B</span><span style="color: #000000"> | · ♜ · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">C</span><span style="color: #000000"> | · · ♜ · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">D</span><span style="color: #000000"> | · · · ♜ · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">E</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">F</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">G</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">H</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000">    -----------------</span>
+
+<span style="color: #000000">      </span><span style="color: #001080">Solved</span><span style="color: #000000"> </span><span style="color: #001080">Board</span>
+<span style="color: #000000">=========================</span>
+<span style="color: #000000">     </span><span style="color: #098658">1</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #098658">4</span><span style="color: #000000"> </span><span style="color: #098658">5</span><span style="color: #000000"> </span><span style="color: #098658">6</span><span style="color: #000000"> </span><span style="color: #098658">7</span><span style="color: #000000"> </span><span style="color: #098658">8</span>
+<span style="color: #000000">    -----------------</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">A</span><span style="color: #000000"> | ♜ · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">B</span><span style="color: #000000"> | · ♜ · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">C</span><span style="color: #000000"> | · · ♜ · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">D</span><span style="color: #000000"> | · · · ♜ · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">E</span><span style="color: #000000"> | · · · · ♜ · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">F</span><span style="color: #000000"> | · · · · · ♜ · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">G</span><span style="color: #000000"> | · · · · · · ♜ · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">H</span><span style="color: #000000"> | · · · · · · · ♜ |</span>
+<span style="color: #000000">    -----------------</span>
+
+</code></pre>
+				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+					<h3>Example</h3>
+				</a>
+				<p><strong>Input</strong></p>
+				<pre><code><span style="color: #000000">     </span><span style="color: #098658">1</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #098658">4</span><span style="color: #000000"> </span><span style="color: #098658">5</span><span style="color: #000000"> </span><span style="color: #098658">6</span><span style="color: #000000"> </span><span style="color: #098658">7</span><span style="color: #000000"> </span><span style="color: #098658">8</span>
+<span style="color: #000000">    -----------------</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">A</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">B</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">C</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">D</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">E</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">F</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">G</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">H</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000">    -----------------</span>
+
+<span style="color: #000000">? </span><span style="color: #001080">Where</span><span style="color: #000000"> </span><span style="color: #001080">are</span><span style="color: #000000"> </span><span style="color: #001080">your</span><span style="color: #000000"> </span><span style="color: #001080">rooks</span><span style="color: #000000"> </span><span style="color: #001080">initially</span><span style="color: #000000"> </span><span style="color: #001080">placed</span><span style="color: #000000">: </span><span style="color: #0070C1">A1</span><span style="color: #000000"> </span><span style="color: #0070C1">B6</span><span style="color: #000000"> </span><span style="color: #0070C1">H4</span><span style="color: #000000"> </span><span style="color: #0070C1">D3</span>
+</code></pre>
+				<p><strong>Output</strong></p>
+				<pre><code><span style="color: #000000">       </span><span style="color: #001080">Input</span><span style="color: #000000"> </span><span style="color: #001080">Board</span>
+<span style="color: #000000">=========================</span>
+<span style="color: #000000">     </span><span style="color: #098658">1</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #098658">4</span><span style="color: #000000"> </span><span style="color: #098658">5</span><span style="color: #000000"> </span><span style="color: #098658">6</span><span style="color: #000000"> </span><span style="color: #098658">7</span><span style="color: #000000"> </span><span style="color: #098658">8</span>
+<span style="color: #000000">    -----------------</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">A</span><span style="color: #000000"> | ♜ · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">B</span><span style="color: #000000"> | · · · · · ♜ · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">C</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">D</span><span style="color: #000000"> | · · ♜ · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">E</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">F</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">G</span><span style="color: #000000"> | · · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">H</span><span style="color: #000000"> | · · · ♜ · · · · |</span>
+<span style="color: #000000">    -----------------</span>
+
+<span style="color: #000000">      </span><span style="color: #001080">Solved</span><span style="color: #000000"> </span><span style="color: #001080">Board</span>
+<span style="color: #000000">=========================</span>
+<span style="color: #000000">     </span><span style="color: #098658">1</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #098658">4</span><span style="color: #000000"> </span><span style="color: #098658">5</span><span style="color: #000000"> </span><span style="color: #098658">6</span><span style="color: #000000"> </span><span style="color: #098658">7</span><span style="color: #000000"> </span><span style="color: #098658">8</span>
+<span style="color: #000000">    -----------------</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">A</span><span style="color: #000000"> | ♜ · · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">B</span><span style="color: #000000"> | · · · · · ♜ · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">C</span><span style="color: #000000"> | · ♜ · · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">D</span><span style="color: #000000"> | · · ♜ · · · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">E</span><span style="color: #000000"> | · · · · ♜ · · · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">F</span><span style="color: #000000"> | · · · · · · ♜ · |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">G</span><span style="color: #000000"> | · · · · · · · ♜ |</span>
+<span style="color: #000000"> </span><span style="color: #0070C1">H</span><span style="color: #000000"> | · · · ♜ · · · · |</span>
+<span style="color: #000000">    -----------------</span>
+</code></pre>
+				<a href="#running-the-test-suite" id="running-the-test-suite" style="color: inherit; text-decoration: none;">
+					<h2>Running the Test Suite</h2>
+				</a>
+				<ol>
+					<li>Ensure that you have completed all the steps in <a href="#Installation-Instructions">Installation Instructions</a></li>
+					<li>Execute the following command</li>
+				</ol>
+				<pre><code class="language-sh"><span style="color: #000000">npm run </span><span style="color: #795E26">test</span>
+<span style="color: #008000"># or</span>
+<span style="color: #000000">yarn </span><span style="color: #795E26">test</span>
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/rooks.html">rooks</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util.html">util</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
