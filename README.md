@@ -73,10 +73,10 @@ yarn start
 3. Once the script starts running, you will be shown the layout of the chessboard and then prompted to enter the locations of your rooks. Your input should be a space-separated list of cells. For example:
 
 ```sh
-? Where are your rooks initially placed: A1 B2 C3 D4
+? Enter your initial rook placement: A1 B2 C3 D4
 ```
 
-3. After you enter your input, you will first be shown the board after it places your initial rooks. Then, once it finds locations for the remaining pieces, it will show you the solved configuration.
+4. After you enter your input, you will first be shown the board after it places your initial rooks. Then, once it finds locations for the remaining pieces, it will show you the solved configuration.
 
     **Note:** This solution only shows you one of many possible configurations. For any input of n valid cells, there are !(8 - n) board configurations
 
@@ -128,7 +128,7 @@ yarn start
  H | · · · · · · · · |
     -----------------
 
-? Where are your rooks initially placed: A1 B6 H4 D3
+? Enter your initial rook placement: A1 B6 H4 D3
 ```
 
 **Output**
