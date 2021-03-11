@@ -39,7 +39,7 @@ async function getInput(): Promise<Chessboard> {
 
 		// Converts the input to a list of cells
 		const inputString = input.cells.trim();
-		const inputCells = inputString === '' ? [] : inputString.split(' ');
+		const inputCells = inputString === '' ? [] : inputString.split(/[\s]+/);
 
 		// Validate the input
 		if (!validateInput(inputCells)) {
