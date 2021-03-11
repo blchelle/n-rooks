@@ -1,5 +1,36 @@
 import deepCopy from 'deep-copy';
-import { EMPTY_BOARD, ROOK, validateBoard, validateInput } from '../util';
+import {
+	convertCell,
+	EMPTY_BOARD,
+	ROOK,
+	validateBoard,
+	validateInput,
+} from '../util';
+
+/**
+ * This tests the conversion of all 64 grid cells to their respective
+ * [row, col] coordinates on the the chessboard
+ *
+ * The following conversions are expected
+ * A1 -> [0, 0]
+ * A2 -> [0, 1]
+ * ...
+ * H8 -> [7, 7]
+ */
+test('test cell conversions', () => {
+	const allRows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+	const allCols = ['1', '2', '3', '4', '5', '6', '7', '8'];
+
+	const allCells = allRows.map((row) => {
+		return allCols.map((col) => row + col);
+	});
+
+	allCells.forEach((row, rowIndex) => {
+		row.forEach((cell, colIndex) => {
+			expect(convertCell(cell)).toStrictEqual([rowIndex, colIndex]);
+		});
+	});
+});
 
 /**
  * This tests the case when a user enters an invalid cell.
