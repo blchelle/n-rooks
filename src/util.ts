@@ -85,8 +85,7 @@ export function validateBoard(board: Chessboard) {
 			const cell = board[row][col];
 			if (cell === ROOK) {
 				if (filledRows.has(row) || filledCols.has(col)) {
-					console.error('Invalid Board Configuration');
-					drawChessBoard(board);
+					console.error('\nInvalid Board Configuration\n');
 					return false;
 				}
 

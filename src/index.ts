@@ -22,34 +22,43 @@ async function getInput(): Promise<Chessboard> {
 	// Draws an empty chessboard for the user to reference for their input
 	drawChessBoard();
 
-	// Prompts the user for their starting board configuration
+	let boardConfig: Chessboard = deepCopy(EMPTY_BOARD);
+	let inputIsValid = false;
+
+	// Continuously prompts the user for their starting board configuration
 	// Note: inquirer.prompt() returns a 'Promise<any>' so I have to explicitly
 	//       cast it to the type I know it will be returned as
-	const input: { cells: string } = await inquirer.prompt([
-		{
-			type: 'input',
-			message: 'Enter your initial rook placement:',
-			name: 'cells',
-		},
-	]);
+	while (!inputIsValid) {
+		const input: { cells: string } = await inquirer.prompt([
+			{
+				type: 'input',
+				message: 'Enter your initial rook placement:',
+				name: 'cells',
+			},
+		]);
 
-	// Converts the input to a list of cells
-	const inputString = input.cells.trim();
-	const inputCells = inputString === '' ? [] : inputString.split(' ');
+		// Converts the input to a list of cells
+		const inputString = input.cells.trim();
+		const inputCells = inputString === '' ? [] : inputString.split(' ');
 
-	// Validate the input. Terminates if the input is invalid
-	validateInput(inputCells);
+		// Validate the input
+		if (!validateInput(inputCells)) {
+			continue;
+		}
 
-	// Splits the users input on spaces and converts their chessboard location
-	// to an array of row, column indices
-	const rookGridLocations = inputCells.map(convertCell);
+		// Splits the users input on spaces and converts their chessboard location
+		// to an array of row, column indices
+		const rookGridLocations = inputCells.map(convertCell);
 
-	// Copies the empty board and then "places" the rooks on the board
-	const boardConfig = deepCopy(EMPTY_BOARD);
-	rookGridLocations.forEach(([row, col]) => (boardConfig[row][col] = ROOK));
+		// Copies the empty board and then "places" the rooks on the board
+		boardConfig = deepCopy(EMPTY_BOARD);
+		rookGridLocations.forEach(
+			([row, col]) => (boardConfig[row][col] = ROOK)
+		);
 
-	// Checks if the user specified an illegal board
-	validateBoard(boardConfig);
+		// Checks if the user specified an illegal board
+		inputIsValid = validateBoard(boardConfig);
+	}
 
 	return boardConfig;
 }
