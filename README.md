@@ -73,7 +73,8 @@ yarn start
 ```
 
 3. After you enter your input, you will first be shown the board after it places your initial rooks. Then, once it finds locations for the remaining pieces, it will show you the solved configuration.
-   **Note:** This solution only shows you one of many possible configurations. For any input of n valid cells, there are !(8 - n) board configurations
+
+    **Note:** This solution only shows you one of many possible configurations. For any input of n valid cells, there are !(8 - n) board configurations
 
 ```
        Input Board
@@ -90,7 +91,7 @@ yarn start
  H | · · · · · · · · |
     -----------------
 
-      Solved Board #1
+      Solved Board
 =========================
      1 2 3 4 5 6 7 8
     -----------------
@@ -143,7 +144,7 @@ yarn start
  H | · · · ♜ · · · · |
     -----------------
 
-      Solved Board #1
+      Solved Board
 =========================
      1 2 3 4 5 6 7 8
     -----------------
