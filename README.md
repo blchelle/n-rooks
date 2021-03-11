@@ -8,13 +8,23 @@ Write a program that will take a board with N number of rooks already placed, an
 -   The program should take input for a starting board configuration with N rooks placed. (The starting set always conforms to the previous rule.)
 -   We would expect 8 total rooks (including the starting set) can always be placed without violating the rule.
 
+## Project Overview
+
+The goal of this section is simply to briefly explain the purpose of each source code file
+
+1. `index.ts`: This file serves as the execution entry point. This file is responsible for getting input, sending that input to `solveBoard()` in `rooks.ts`, and then displaying the results.
+2. `rook.ts`: This file contains the algorithmic portion of the project. Is contains a single exported function `solveBoard()` which takes the users board as input and finds a possible way to place the remaining rooks on the board.
+3. `util.ts`: This file contains some useful types, constants and helper functions that are used throughout the application.
+4. `rook.test.ts`: This file provides a test suite for the `solveBoard()` function in `rooks.ts`
+5. `util.test.ts`: This file provides a test suite for the `validateInput()` and `validateBoard()` function in `util.ts`
+
 ### Documentation
 
 Generated documentation for the project is currently hosted at https://nrooks-docs.brockchelle.com
 
 ## Installation Instructions
 
-All of the below technologies will be required to run this program.
+The following technologies will be required to run this program.
 
 -   Node
 -   Yarn/NPM
@@ -70,15 +80,15 @@ npm run start
 yarn start
 ```
 
-3. Once the script starts running, you will be shown the layout of the chessboard and then prompted to enter the locations of your rooks. Your input should be a space-separated list of cells. For example:
+3. Once the script starts running, you will be shown the chessboard layout and then prompted to enter the locations of your rooks. Your input should be a space-separated list of cells. For example:
 
 ```sh
 ? Enter your initial rook placement: A1 B2 C3 D4
 ```
 
-4. After you enter your input, you will first be shown the board after it places your initial rooks. Then, once it finds locations for the remaining pieces, it will show you the solved configuration.
+4. After you enter your input, you are first be shown the board after the script places your rooks. Once it finds locations for the remaining pieces, it will show you the solved configuration.
 
-    **Note:** This solution only shows you one of many possible configurations. For any input of n valid cells, there are !(8 - n) board configurations
+    **Note:** This solution only shows you one of many possible configurations. For an input of n valid cells, there are `!(8 - n)` board configurations
 
 ```
        Input Board
@@ -113,7 +123,9 @@ yarn start
 
 ### Example
 
-**Input**
+#### Input
+
+First, you are shown an empty chessboard and you're prompted to place your rook. You place rooks in cells `A1, B6, H4, D3`.
 
 ```
      1 2 3 4 5 6 7 8
@@ -131,7 +143,9 @@ yarn start
 ? Enter your initial rook placement: A1 B6 H4 D3
 ```
 
-**Output**
+#### Output
+
+Then, you are shown the board that you input (notice the rooks placed at A1, B6, H4, and D3). Once it is solved, you are shown the final board. Here the board found a solution by placing the remaining rooks at `C2, E5, F7, G8`.
 
 ```
        Input Board
