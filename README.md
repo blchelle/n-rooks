@@ -8,6 +8,10 @@ Write a program that will take a board with N number of rooks already placed, an
 -   The program should take input for a starting board configuration with N rooks placed. (The starting set always conforms to the previous rule.)
 -   We would expect 8 total rooks (including the starting set) can always be placed without violating the rule.
 
+### Documentation
+
+Generated documentation for the project is currently hosted at https://nrooks-docs.brockchelle.com
+
 ## Installation Instructions
 
 All of the below technologies will be required to run this program.
