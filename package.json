@@ -6,9 +6,10 @@
 	"author": "Brock Chelle <Brocklchelle@gmail.com>",
 	"license": "MIT",
 	"scripts": {
+		"compile": "tsc",
+		"docs": "typedoc src/",
 		"start": "tsc && node dist/index.js",
-		"test": "jest --silent",
-		"docs": "typedoc src/"
+		"test": "jest --silent"
 	},
 	"devDependencies": {
 		"@types/inquirer": "^7.3.1",
