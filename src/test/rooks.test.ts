@@ -35,7 +35,7 @@ test('7/8 rooks placed', () => {
  * solveBoard() is pure, so it will output a single, predictable solution
  */
 test('4/8 rooks placed', () => {
-	// Builds out an input board with all 8 rooks already placed
+	// Builds out an input board with 4 rooks already placed
 	const inputBoard = deepCopy(EMPTY_BOARD);
 	inputBoard[0][1] = ROOK; // A2
 	inputBoard[2][5] = ROOK; // C6
@@ -56,19 +56,18 @@ test('4/8 rooks placed', () => {
 });
 
 /**
- * This test the case when the user enters no cells, making the initial board
+ * This tests the case when the user enters no cells, making the initial board
  * empty. In this case, the board should place rooks diagonally from the top
  * left corner (A1) down to the bottom right corner (H8)
  *
- * The expected output here is just one of many possible solutions, but
- * solveBoard is designed to output a single, predictable solution
+ * The expected output here is just one of many possible solutions but
+ * solveBoard is pure, so it will output a single, predictable solution
  */
 test('0/8 rooks placed', () => {
 	// Solves the board
 	const resultBoard = solveBoard(deepCopy(EMPTY_BOARD));
 
-	// Builds out the expected board. That is, rooks placed diagonally from
-	// top-left to bottom right
+	// Builds out the expected board
 	const expectedBoard = deepCopy(EMPTY_BOARD);
 	for (let i = 0; i < BOARD_SIZE; i++) {
 		expectedBoard[i][i] = ROOK;
@@ -92,8 +91,8 @@ test('8/8 rooks placed', () => {
 	// Solves the board
 	const resultBoard = solveBoard(deepCopy(inputBoard));
 
-	// The expected board should equal to the input board,
-	// Because the input board should be unchanged
+	// The expected board should equal to the input board
+	// because the input board should be unchanged
 	const expectedBoard = deepCopy(inputBoard);
 
 	expect(resultBoard).toStrictEqual(expectedBoard);

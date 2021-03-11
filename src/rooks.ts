@@ -40,7 +40,7 @@ export function solveBoard(board: Chessboard) {
 	const freeRows = allPossible.filter((num) => !filledRows.has(num));
 	const freeCols = allPossible.filter((num) => !filledCols.has(num));
 
-	// freeRows and freeCols are guaranteed to have the same length
+	// Places rooks on the available cells
 	for (let i = 0; i < freeRows.length; i++) {
 		board[freeRows[i]][freeCols[i]] = ROOK;
 	}

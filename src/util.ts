@@ -15,6 +15,13 @@ export const ROOK = true;
  */
 export const BOARD_SIZE = 8;
 
+/**
+ * A representation of an 8x8 chessboard with no rooks on it
+ */
+export const EMPTY_BOARD: Chessboard = Array.from({ length: BOARD_SIZE }, () =>
+	Array.from({ length: BOARD_SIZE }, () => !ROOK)
+);
+
 // The ASCII value for an uppercase A
 // This is used for the conversion from ASCII to numeric
 const A_ASCII = 65;
@@ -22,11 +29,6 @@ const A_ASCII = 65;
 // UTF-8 characters used in the chessboard drawings
 const UTF_ROOK = '\u265C';
 const UTF_DOT = '\u00B7';
-
-// A representation of an 8x8 chessboard with no pieces on it
-export const EMPTY_BOARD: Chessboard = Array.from({ length: BOARD_SIZE }, () =>
-	Array.from({ length: BOARD_SIZE }, () => !ROOK)
-);
 
 /**
  * Draws an ascii representation of a chessboard
@@ -60,9 +62,9 @@ export function drawChessBoard(board: Chessboard = EMPTY_BOARD) {
  * Converts a location on a chess board to a 2 element array containing the
  * equivalent row and column number of that cell.
  *
- * For Example: A5 would be converted to [4, 0] which means row 4, column 0
+ * For Example: A5 would be converted to [0, 4] which means row 0, column 4
  * @param cell A location on the chess board (ie. 'A5')
- * @returns The indexable equivalent of the input cell (ie. [4, 0])
+ * @returns The indexable equivalent of the input cell (ie. [0, 4])
  */
 export function convertCell(cell: string) {
 	return [cell.charCodeAt(0) - A_ASCII, +cell[1] - 1];
@@ -73,7 +75,7 @@ export function convertCell(cell: string) {
  * An invalid board is one where 2 or more rooks are threatening each other
  *
  * @param board The users input board
- * @throws Program will exit if the board is invalid
+ * @return Whether or not the board is valid (true/false)
  */
 export function validateBoard(board: Chessboard) {
 	const filledRows = new Set<number>();
@@ -99,11 +101,10 @@ export function validateBoard(board: Chessboard) {
 }
 
 /**
- * Validates that all of the users inputs are valid spaces on the chess board
- * An invalid board is one where 2 or more rooks are threatening each other
+ * Validates that all of the users inputs are valid cells on a chessboard
  *
  * @param cells An array of cell strings (ie. ['A1', 'B2'])
- * @throws Program will exit if the board is invalid
+ * @return Whether or not all of the input cells are valid (true/false)
  */
 export function validateInput(cells: string[]) {
 	const cellRegex = /^[ABCDEFGH][12345678]$/;

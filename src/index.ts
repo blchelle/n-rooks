@@ -41,16 +41,16 @@ async function getInput(): Promise<Chessboard> {
 		const inputString = input.cells.trim();
 		const inputCells = inputString === '' ? [] : inputString.split(/[\s]+/);
 
-		// Validate the input
+		// Validates the input
 		if (!validateInput(inputCells)) {
 			continue;
 		}
 
-		// Splits the users input on spaces and converts their chessboard location
-		// to an array of row, column indices
+		// Converts the list of cells to grid locations (i.e A1 -> [0, 0])
 		const rookGridLocations = inputCells.map(convertCell);
 
-		// Copies the empty board and then "places" the rooks on the board
+		// Copies the empty board and then places the rooks on the board
+		// where the user specified
 		boardConfig = deepCopy(EMPTY_BOARD);
 		rookGridLocations.forEach(
 			([row, col]) => (boardConfig[row][col] = ROOK)
